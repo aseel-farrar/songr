@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <title>&#9835; Album’s art &#9835;</title>
+</head>
+
+<body>
+<header>
+<h1>Albums  &#9835;</h1>
+</header>
+
+<main>
+    <section class="albums">
+        <div th:each="album: ${albums}" class="album">
+            <img class="image" th:alt="${album.getTitle()}" th:src="${album.getImageUrl()}">
+            <div class="albumInfo">
+                <h4 th:text="'Album Title: ' + ${album.getTitle()}"></h4>
+                <p th:text="'Artist: ' + ${album.getArtist()} "></p>
+                <p th:text="'Number of Songs: ' + ${album.getSongCount()}"></p>
+                <p th:text="'Album Length: ' + ${album.getLength()}"></p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+
+</footer>
+</body>
+
+</html>

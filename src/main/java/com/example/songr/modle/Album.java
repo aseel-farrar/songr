@@ -1,8 +1,12 @@
 package com.example.songr.modle;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "albums")
 public class Album {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long albumId;
 
     private String title;

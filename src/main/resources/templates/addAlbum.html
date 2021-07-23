@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/reset.css}" rel="stylesheet"/>
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <title>Add Album</title>
+</head>
+<body>
+<header>
+    <div class="header">
+        <h1> >> Add Album &#9835;</h1>
+        <nav>
+            <a href="/addAlbumForm">Add Album</a>
+            <a href="/allAlbums">All Albums</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="formContainer">
+        <form th:action="@{/addAlbum}" method="post">
+            <p>
+                <label>Album Title:</label>
+                <input type="text" name="title" required/>
+            </p>
+            <p>
+                <label>Artist:</label>
+                <input type="text" name="artist" required/>
+            </p>
+            <p>
+                <label>Number of Songs: </label>
+                <input type="number" name="songCount" required/>
+            </p>
+            <p>
+                <label>Album Length: </label>
+                <input type="number" name="length" required/>
+            </p>
+            <p>
+                <label>Image Url: </label>
+                <input type="text" name="imageUrl" required/>
+            </p>
+            <p class="button">
+                <input type="submit" value="Add"/>
+                <input type="reset" value="Reset">
+            </p>
+
+        </form>
+    </section>
+</main>
+
+<footer>
+
+</footer>
+</body>
+</html>

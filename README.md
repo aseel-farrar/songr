@@ -8,4 +8,4 @@
 > ## Lab: 12 - Spring and REST
 * `/allAlbums` route retrieve all the albums from the DB then rendered `allAlbums` template.
 * `/addAlbumForm` render `addAlbum` template that provide the user with a form for insert the new album.
-* `/
+* `/addAlbum` route used to save the new album into the DB then redirect the user to `allAlbums` template.

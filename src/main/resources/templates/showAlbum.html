@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <link th:href="@{/css/reset.css}" rel="stylesheet"/>
     <link th:href="@{/css/styles.css}" rel="stylesheet"/>
-    <title>All Albums</title>
+    <title>Show Album</title>
 </head>
 <body>
 <header>
     <div class="header">
-        <h1>>> All Albums &#9835;</h1>
+        <h1 th:text="'>>'+ ${album.getTitle()}+' &#9835;' "></h1>
         <nav>
             <a href="/addAlbumForm">Add Album</a>
             <span> | </span>
@@ -24,20 +24,21 @@
 
 <main>
     <section class="albums">
-        <div th:each="album: ${albums}" class="album">
+        <div class="album">
             <img class="image" th:alt="${album.getTitle()}" th:src="${album.getImageUrl()}">
             <div class="albumInfo">
-                <h4 th:text="'Album Title: ' + ${album.getTitle()}"></h4>
                 <p th:text="'Artist: ' + ${album.getArtist()} "></p>
                 <p th:text="'Number of Songs: ' + ${album.getSongCount()}"></p>
                 <p th:text="'Album Length: ' + ${album.getLength()}"></p>
-
-                <form th:action="@{/details}" method="post">
-                    <p class="button">
-                        <input th:value=" ${album.getTitle()}" type="hidden" th:name="albumTitle">
-                        <input type="submit" value="Details"/>
-                    </p>
-                </form>
+            </div>
+        </div>
+    </section>
+    <section class="songs">
+        <div th:each="song: ${albumSongs}" class="song">
+            <div>
+                <h4 th:text="'Song Title: ' + ${song.getSongTitle()}"></h4>
+                <p th:text="'Song Length: ' + ${song.getSongLength()}"></p>
+                <p th:text="'Track Number: ' + ${song.getTrackNumber()}"></p>
             </div>
         </div>
     </section>

@@ -1,6 +1,9 @@
-package com.example.songr.modle;
+package com.example.songr.modles;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "albums")
@@ -14,6 +17,13 @@ public class Album {
     private int songCount;
     private long length;
     private String imageUrl;
+
+//    @OneToMany(mappedBy = "department")
+//    private List<Student> students;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "album")
+    private List<Song> songs;
 
     public Album() {
 
@@ -67,4 +77,11 @@ public class Album {
         this.imageUrl = imageUrl;
     }
 
+    public Long getAlbumId() {
+        return albumId;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
 }

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <link th:href="@{/css/reset.css}" rel="stylesheet"/>
     <link th:href="@{/css/styles.css}" rel="stylesheet"/>
-    <title>Home Page</title>
+    <title>All Songs</title>
 </head>
-
 <body>
 <header>
     <div class="header">
+        <h1>>> All Songs  &#9835;</h1>
         <nav>
             <a href="/addAlbumForm">Add Album</a>
             <span> | </span>
@@ -23,12 +23,20 @@
 </header>
 
 <main>
-    <h1 class="home">>> Home Page <<</h1>
-    <img src="https://studio.code.org/assets/dance_sharing_drawing-358d76a341cb58ac3ecaefe3082f3c54e3055e42acef936bbca255ea1eccdf75.png">
+    <section class="songs">
+        <div th:each="song: ${songs}" class="song">
+            <div>
+                <h4 th:text="'Song Title: ' + ${song.getSongTitle()}"></h4>
+                <p th:text="'Album: ' + ${song.getAlbumTitle()}"></p>
+                <p th:text="'Song Length: ' + ${song.getSongLength()}"></p>
+                <p th:text="'Track Number: ' + ${song.getTrackNumber()}"></p>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer>
-</footer>
 
+</footer>
 </body>
 </html>

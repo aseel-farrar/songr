@@ -31,6 +31,7 @@ header {
     background: linear-gradient(to right, #eaafc8, #654ea3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+
 .header{
     display: flex;
     justify-content: space-around;
@@ -73,14 +74,14 @@ img {
 
 }
 
-.albums {
+.albums, .songs {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 
 }
 
-.album {
+.album, .song {
     width: 30%;
     border: solid 2px black;
     margin: 20px;

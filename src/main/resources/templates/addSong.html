@@ -24,26 +24,22 @@
 
 <main>
     <section class="formContainer">
-        <form th:action="@{/addAlbum}" method="post">
+        <form th:action="@{/addSong}" method="post">
             <p>
                 <label>Album Title:</label>
-                <input type="text" name="title" required/>
+                <input type="text" name="albumTitle" required/>
             </p>
             <p>
-                <label>Artist:</label>
-                <input type="text" name="artist" required/>
+                <label>Song Title:</label>
+                <input type="text" name="songTitle" required/>
             </p>
             <p>
-                <label>Number of Songs: </label>
-                <input type="number" name="songCount" required/>
-            </p>
-            <p>
-                <label>Album Length: </label>
+                <label>Song Length: </label>
                 <input type="number" name="length" required/>
             </p>
             <p>
-                <label>Image Url: </label>
-                <input type="text" name="imageUrl" required/>
+                <label>Track Number: </label>
+                <input type="text" name="trackNumber" required/>
             </p>
             <p class="button">
                 <input type="submit" value="Add"/>

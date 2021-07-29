@@ -2,16 +2,28 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-  <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <link th:href="@{/css/reset.css}" rel="stylesheet"/>
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
   <title>capitalize</title>
 </head>
 <body>
 <header>
-
+    <div class="header">
+        <h1> >> CAPITALIZE <<</h1>
+        <nav>
+            <a href="/addAlbumForm">Add Album</a>
+            <span> | </span>
+            <a href="/allAlbums">All Albums</a>
+            <span> | </span>
+            <a href="/addSongForm">Add Song</a>
+            <span> | </span>
+            <a href="/allSongs">All Songs</a>
+        </nav>
+    </div>
 </header>
 
 <main>
-    <h2 th:text="${text}"></h2>
+    <h1 th:text="${text}"></h1>
 </main>
 <footer>
 

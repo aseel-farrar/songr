@@ -39,33 +39,6 @@ public class SongrController {
 
         model.addAttribute("albums", albums);
 
-        albumRepository.saveAll(albums);
-
-        ArrayList<Song> songs = new ArrayList<>();
-        songs.add(new Song("1st Song", 111L, 1, "Folklore"));
-        songs.add(new Song("2nd Song", 777L, 2, "Folklore"));
-        songs.add(new Song("3rd Song", 999L, 3, "Folklore"));
-
-        songs.get(0).setAlbum(albums.get(0));
-        songs.get(1).setAlbum(albums.get(0));
-        songs.get(2).setAlbum(albums.get(0));
-
-        songs.add(new Song("1st Song", 222L, 1, "The Album"));
-        songs.add(new Song("2nd Song", 333L, 2, "The Album"));
-        songs.add(new Song("3rd Song", 444L, 3, "The Album"));
-
-        songs.get(3).setAlbum(albums.get(1));
-        songs.get(4).setAlbum(albums.get(1));
-        songs.get(5).setAlbum(albums.get(1));
-
-        songs.add(new Song("1st Song", 555L, 1, "Good Souls Better Angels"));
-        songs.add(new Song("2nd Song", 666L, 2, "Good Souls Better Angels"));
-        songs.add(new Song("3rd Song", 777L, 3, "Good Souls Better Angels"));
-
-        songs.get(6).setAlbum(albums.get(2));
-        songs.get(7).setAlbum(albums.get(2));
-        songs.get(8).setAlbum(albums.get(2));
-        songRepository.saveAll(songs);
 
         return "albums";
     }
